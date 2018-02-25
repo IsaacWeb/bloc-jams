@@ -28,18 +28,3 @@ var albumMarconi = {
         { title: 'Wrong phone number', duration: '2:15'}
     ]
 };
-
-var albumLP = {
-    title: 'A Thousand Suns',
-    artist: 'Linkin Park',
-    label: 'RB',
-    year: '2010',
-    albumArtUrl: 'assets/images/album_covers/20.png',
-    songs: [
-        { title: 'The Requiem', duration: '2:01' },
-        { title: 'The Radiance', duration: '2:41' },
-        { title: 'Burning in the Skies', duration: '4:13'},
-        { title: 'Empty Spaces', duration: '4:14' },
-        { title: 'When They Come for Me', duration: '4:53'}
-    ]
-};
