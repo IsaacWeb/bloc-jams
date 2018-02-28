@@ -23,17 +23,17 @@ var createSongRow = function(songNumber, songName, songLength) {
   		currentlyPlayingCell.html(currentlyPlayingSongNumber);
   	}
   	if (currentlyPlayingSongNumber !== songNumber) {
-  		// Switch from Play -> Pause button to indicate new song is playing.
-  		$(this).html(pauseButtonTemplate);
       setSong(songNumber);
       currentSoundFile.play();
-      currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
       updateSeekBarWhileSongPlays();
-      updatePlayerBarSong();
+      currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
               var $volumeFill = $('.volume .fill');
               var $volumeThumb = $('.volume .thumb');
               $volumeFill.width(currentVolume + '%');
               $volumeThumb.css({left: currentVolume + '%'});
+
+              $(this).html(pauseButtonTemplate);
+              updatePlayerBarSong();
 
   	} else if (currentlyPlayingSongNumber === songNumber) {
         if (currentSoundFile.isPaused()) {
@@ -101,7 +101,7 @@ var createSongRow = function(songNumber, songName, songLength) {
  };
 
  var setCurrentAlbum = function(album) {
-    currentAlbum = album;
+  currentAlbum = album;
      var $albumTitle = $('.album-view-title');
      var $albumArtist = $('.album-view-artist');
      var $albumReleaseInfo = $('.album-view-release-info');
@@ -116,7 +116,7 @@ var createSongRow = function(songNumber, songName, songLength) {
 
      $albumSongList.empty();
 
-     for (i = 0; i < album.songs.length; i++) {
+     for (var i = 0; i < album.songs.length; i++) {
        var $newRow = createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
       $albumSongList.append($newRow);
      }
@@ -128,7 +128,7 @@ var createSongRow = function(songNumber, songName, songLength) {
  };
 
  var setTotalTimeInPlayerBar = function(totalTime){
-  var totalTimeElement = $('.seek-control .total-time');
+  var $totalTimeElement = $('.seek-control .total-time');
   $totalTimeElement.text(totalTime);
  };
 
