@@ -26,7 +26,7 @@ var createSongRow = function(songNumber, songName, songLength) {
       setSong(songNumber);
       currentSoundFile.play();
       updateSeekBarWhileSongPlays();
-      currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
+    currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
               var $volumeFill = $('.volume .fill');
               var $volumeThumb = $('.volume .thumb');
               $volumeFill.width(currentVolume + '%');
@@ -221,7 +221,7 @@ var createSongRow = function(songNumber, songName, songLength) {
      $('.currently-playing .artist-song-mobile').text(currentSongFromAlbum.title + " - " + currentAlbum.artist);
 
      $('.main-controls .play-pause').html(playerBarPauseButton);
-     setTotalTimeInPlayerBar(filterTimeCode(currentSongFromAlbum.length));
+     setTotalTimeInPlayerBar(filterTimeCode(currentSongFromAlbum.duration));
      };
 
  var trackIndex = function(album, song) {
